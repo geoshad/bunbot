@@ -14,6 +14,7 @@ client.login(process.env.CLIENT_TOKEN);
 
 // replies with a greeting
 client.on("messageCreate", (message) => {
+    if (message.author == client.user) return; // prevents self-replies
     if (message.content === "hi!") {
         message.reply("hi!");
     }
